@@ -60,8 +60,10 @@
       const isGerman = document.documentElement.lang === "de";
       const data = {
         title: "DaySpin",
-        text: isGerman ? "Entdecke DaySpin – den Apple-Kalender zum Drehen." : "Discover DaySpin – the Apple calendar with a spin.",
-        url: location.href.split("?")[0]
+        text: isGerman ? "Entdecke DaySpin – deinen Kalender zum Drehen." : "Discover DaySpin – your calendar with a spin.",
+        // Eigene Vorschau-Version, damit Messenger nicht dauerhaft eine alte
+        // Open-Graph-Karte aus ihrem Cache verwenden.
+        url: location.href.split("?")[0] + "?preview=2"
       };
       try {
         if (navigator.share) await navigator.share(data);
